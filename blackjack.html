@@ -54,8 +54,8 @@ var counter = 0;
 function GenerateNewCard()
 {
   counter +=1;
-  var d = document.getElementById("HUM").innerHTML = "";
-  var e = document.getElementById("COMP").innerHTML = "";
+  var d = document.getElementById("HUMan").innerHTML = "";
+  var e = document.getElementById("COMPuter").innerHTML = "";
   var f = document.getElementById("COUNT").innerHTML = counter;
   var a = parseInt(document.getElementById("dealer").value = 0);
   var res = document.getElementById("dealer");
@@ -87,8 +87,8 @@ function HUMAN()
   if(res.value > 21)
   {
     whoWonC += 1;
-    document.getElementById("COMPW").innerHTML = whoWonC;
-    var a = document.getElementById("COMP").innerHTML = "I WIN";
+    document.getElementById("COMPuterWon").innerHTML = whoWonC;
+    var a = document.getElementById("COMPuter").innerHTML = "I WIN";
   }
 }
 var whoWonH = 0;
@@ -103,26 +103,26 @@ function determineWinner()
     if(b > 21)
 {
     whoWonH += 1;
-    document.getElementById("HUMW").innerHTML = whoWonH;
-    var winner = document.getElementById("HUM").innerHTML = "I WIN";
+    document.getElementById("HUManWon").innerHTML = whoWonH;
+    var winner = document.getElementById("HUMan").innerHTML = "I WIN";
     return;
 }
   if(a==b)
   {
-    var a = document.getElementById("HUM").innerHTML = "TIE";
-    var b = document.getElementById("COMP").innerHTML = "TIE";
+    var a = document.getElementById("HUMan").innerHTML = "TIE";
+    var b = document.getElementById("COMPuter").innerHTML = "TIE";
   }
   if(a>b)
   {
     whoWonH += 1;
-    document.getElementById("HUMW").innerHTML = whoWonH;
-    var a = document.getElementById("HUMW").innerHTML = "I WIN";
+    document.getElementById("HUManWon").innerHTML = whoWonH;
+    var a = document.getElementById("HUManWon").innerHTML = "I WIN";
   }
   if(b>a)
   {
     whoWonC += 1;
-    document.getElementById("COMPW").innerHTML = whoWonC;
-    var g = document.getElementById("COMP").innerHTML = "I WIN!";
+    document.getElementById("COMPuterWon").innerHTML = whoWonC;
+    var g = document.getElementById("COMPuter").innerHTML = "I WIN!";
   }
 }
 
@@ -151,8 +151,8 @@ function determineWinner()
         <th>Games Played</th>
       </tr>
       <tr>
-        <td id="HUM"></td>
-        <td id="COMP"></td>
+        <td id="HUMan"></td>
+        <td id="COMPuter"></td>
         <td id="COUNT"></td>
       </tr>
     </table>
@@ -165,8 +165,8 @@ function determineWinner()
         <th>Player</th>
         <th>Dealer</th>
       </tr>
-      <td id="HUMW"></td>
-      <td id="COMPW"></td>
+      <td id="HUManWon"></td>
+      <td id="COMPuterWon"></td>
       </div>
     </table>
   </center>
