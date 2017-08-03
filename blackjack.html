@@ -8,6 +8,9 @@
 </head>
 
 <script>
+  
+//2 function chia bai
+  
 function getTheSuit()
 {
   suit = Math.floor(Math.random() * 4) + 1
@@ -46,6 +49,8 @@ return card;
 
 var counter = 0;
 
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  
 function GenerateNewCard()
 {
   counter +=1;
@@ -60,6 +65,7 @@ function GenerateNewCard()
   res.value = aa + getACard("Dealer");
 }
 
+//function kiem tra, neu dealer co > 17 diem thi dung bai    
 function COMPUTER()
 {
   var a = parseInt(document.getElementById("dealer").value);
@@ -70,6 +76,9 @@ function COMPUTER()
   res.value = b + getACard("Dealer");
   }
 }
+  
+  
+//function kiem tra, nguoi choi co > 21 diem thi thua  
 function HUMAN()
 {
   var a = parseInt(document.getElementById("you").value);
@@ -84,7 +93,9 @@ function HUMAN()
 }
 var whoWonH = 0;
 var whoWonC = 0;
-
+  
+  
+//
 function determineWinner()
 {
     var a = parseInt(document.getElementById("you").value);
