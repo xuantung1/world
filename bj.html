@@ -1,39 +1,52 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <title> BlackJack </title>
-    </head>
-    <body>
-      function getSuit() {
-        suit = Math.floor(Math.random()*4);
-        if ( suit == 0 ) {
-          return "hearts";
-          }
-        if ( suit == 1 ) {
-          return "diamonds";
-          }
-        if ( suit == 0 ) {
-          return "clubs";
-          }
-        if ( suit == 0 ) {
-          return "spades";
-          } 
-        }
-     
-      function getCard() {
-        suit = getSuit();
-        card = Math.floor(Math.random()*13)+1;
-        if (card == 1) {
-          return 11;
-          }
-        if (card > 10) {
-          return 10;
-          }
-        return card;
-        }
-      
-      var counter = 0;
-    function GenerateNewCard()
+<html>
+
+<head>
+  <title>BlackJack</title>
+  <link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
+ 
+</head>
+
+<script>
+function getTheSuit()
+{
+  suit = Math.floor(Math.random() * 4) + 1
+  if(suit == 1)
+{
+  return "Hearts";
+}
+if(suit == 2)
+{
+  return "Diamonds";
+}
+if(suit == 3)
+{
+  return "Spades";
+}
+if(suit == 4)
+{
+  return "Clubs";
+  }
+}
+function getACard(turn)
+{
+  card = Math.floor(Math.random() * 13) + 1
+  suit = getTheSuit();
+  if(card == 1)
+{
+  return 11;
+}
+if(card > 10)
+{
+  return 10;
+}
+
+return card;
+}
+
+var counter = 0;
+
+function GenerateNewCard()
 {
   counter +=1;
   var d = document.getElementById("HUM").innerHTML = "";
@@ -149,11 +162,3 @@ function determineWinner()
 </body>
 
 </html>﻿
-      
-      
-      
-      
-      
-          
-    </body>
-  </html> 
