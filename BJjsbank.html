@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BJjavascriptbank-00</title>
-</head>
-
-<body>
-
-
-
-<script language="JavaScript">
+  <title>BJjavascriptbank-FORM</title>
+  <script language="JavaScript">
 
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
@@ -100,7 +94,7 @@ gameOver=0; form.numgames.value=eval(form.numgames.value)-1;}
 }
 function setBj(){
 gameOver=0; cardCount=0; 
-
+document.display.dealer.value="";
 document.display.you.value="";
 document.display.numgames.value="0";
 document.display.say1.value="    Hit 'Deal'";
@@ -110,10 +104,34 @@ document.display.say2.value="    To Start!";
 // End -->
 
 </script>
-	<!--
-    	This script downloaded from www.JavaScriptBank.com
-    	Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
-	-->
+</head>
+
+<body>
+<form name="display">
+<table bgcolor="#c0c0c0" border="1" cellspacing="0" cellpadding="3">
+<tbody><tr>
+<td><center>Score:</center></td>
+<td><center>Dealer</center></td>
+<td><center><input type="text" name="dealer" size="2"></center></td>
+<td><center>Card(s):  <input type="text" name="say1" size="18" value=""></center></td>
+</tr>
+<tr>
+<td><center><input type="text" name="numgames" size="3" value="0"></center></td>
+<td><center>Player</center></td>
+<td><center><input type="text" name="you" size="2"></center></td>
+<td><center>Card(s):  <input type="text" name="say2" size="18" value=""></center></td>
+</tr>
+<tr>
+<td><center><input type="button" value="Deal" onclick="NewHand(this.form)"></center></td>
+<td colspan="3"><center>
+<input type="button" value="Stand" onclick="Dealer(this.form);LookAtHands(this.form);">
+<input type="button" value=" Hit " onclick="User(this.form)"></center></td></tr>
+</tbody></table>
+</form>
+
+
+
+	
 
 </body>
 </html>
