@@ -9,8 +9,7 @@ var gameOver; var cardCount;
 function Shuffle(max){
 var num=Math.random()*max;
 return Math.round(num)+1;
-}
-	  
+}	  
 function getSuit(){
 suit = Shuffle(4);
 if(suit == 1) return "Spades";
@@ -34,7 +33,7 @@ if(card == 1) {
 return card;
 }
 function PickACard(strWho){
-card = Shuffle(12); //tại sao 12???????????
+card = Shuffle(12); //tại sao 12?????????????????????????????????????????????????????
 suit = getSuit();
 if(strWho =="You")
 document.display.say2.value=(cardName(card) + " of " + suit); //say2 là bài của người chơi
@@ -77,7 +76,7 @@ gameOver=0; form.numgames.value=eval(form.numgames.value)-1;}
 function LookAtHands(form){
 if (gameOver ==0 || form.you.value<10 || cardCount <2){return;}
 else
-if(form.dealer.value > 21)
+if(form.dealer.value > 21) 
 {form.say1.value=("House Busts!"); form.say2.value=("You Win! $$$$$$");
 gameOver=0; form.numgames.value=eval(form.numgames.value)+1;}
  else
@@ -122,10 +121,10 @@ window.onload = setBj;
 <td><center>Card(s):  <input type="text" name="say2" size="18" value=""></center></td>
 </tr>
 <tr>
-<td><center><input type="button" value="Deal" onclick="NewHand(this.form)"></center></td>
+<td><center><input type="button" value="Deal" onclick="NewHand(this.form)"></center></td> //Deal:
 <td colspan="3"><center>
-<input type="button" value="Stand" onclick="Dealer(this.form);LookAtHands(this.form);">
-<input type="button" value=" Hit " onclick="User(this.form)"></center></td></tr>
+<input type="button" value="Stand" onclick="Dealer(this.form);LookAtHands(this.form);">  //Người chơi dừng bài rồi máy ms bốc :)
+<input type="button" value=" Hit " onclick="User(this.form)"></center></td></tr>         //
 </tbody></table>
 </form>
 
