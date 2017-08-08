@@ -69,11 +69,11 @@ if (gameOver ==0)
 else
 {cardCount+=1; form.say1.value=("You Get...");
 form.you.value = eval(form.you.value) + PickACard("You");}
-
-if(form.you.value==21 && cardCount==2)						//thêm function
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADD	
+if(form.you.value==21 && cardCount==2)						//ADD :thêm 
 {form.say1.value=("Blackjack! You win!");					//có blackjack
-gameOver=0; form.numgames.value=eval(form.numgames.value)+1;}			//là thắng
- 
+gameOver=0; form.numgames.value=eval(form.numgames.value)+1;}			//là thắng 
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD	
 if(form.you.value > 21)
 {form.say1.value=("You Busted!");
 gameOver=0; form.numgames.value=eval(form.numgames.value)-1;}
