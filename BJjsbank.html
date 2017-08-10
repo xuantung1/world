@@ -88,7 +88,6 @@ if (gameOver ==0)
 else
 {cardCount+=1; form.say1.value=("You Get...");
 form.you.value = eval(form.you.value) + PickACard("You");}
-document.getElementById("check").innerHTML= cardCount
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADD	
 if(form.you.value==21 && cardCount==2)						//ADD :thêm 
 {form.say1.value=("Blackjack! You win!");					//có blackjack
@@ -154,9 +153,7 @@ window.onload = setBj;
 <input type="button" value=" Hit " onclick="User(this.form)"></center></td></tr>         
 </tbody>
 </table>
-</form>
-<p> so bai</p>
-<p id="check"><p>	
+</form>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 <div id="userDIV">
 	Player 's cards
