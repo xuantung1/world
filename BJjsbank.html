@@ -13,7 +13,7 @@
 }	
 </style>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack."</title>
+  <title>Blackjack</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
@@ -58,7 +58,7 @@ document.display.say1.value=(cardName(card) + " of " + suit);			//say1 là bài 
 return cardValue(card,strWho);
 }
 	  
-function NewHand(form){  		//bắt đầu ván mới, called khi ấn DEAL
+function NewHand(form){  //bắt đầu ván mới, called khi ấn DEAL
 if(gameOver !=0) //gameOver là biến boolean thì phải, xem đã hết game chưa ??? bằng 0 là hết game rồi ???
 {form.say1.value=("Hand in Play!"); form.say2.value=(""); return;} 
 else
@@ -68,26 +68,27 @@ form.you.value = eval(form.you.value) + PickACard("You");
 gameOver= -1; cardCount+=1;}
 }
 	  
-function Dealer(form){                               //function để máy bốc bài, called khi ấn 'STAND'
+function Dealer(form){    //function để máy bốc bài, called khi ấn 'STAND'
 if (gameOver ==0)
 {form.say1.value=("Deal the Cards!"); form.say2.value=(""); return;}
 else
 if(form.you.value<10)
 {form.say1.value=("Not Below Ten!"); form.say2.value=("Take a Hit!"); return;}
 else
-if (cardCount <2) 					//cardCount để đếm bài, tối đa mỗi người phải có 2 quân
+if (cardCount <2)  //cardCount để đếm bài, tối thiểu người chơi phải có 2 quân
 {form.say1.value=("Minimum 2 Cards!"); form.say2.value=("Hit Again!"); return;}
 else
-while(form.dealer.value < 17) 				//máy bốc liên tiếp cho đến khi có >17 điểm
+while(form.dealer.value < 17) 		//máy bốc liên tiếp cho đến khi có >17 điểm
 {form.dealer.value = eval(form.dealer.value) + PickACard("Dealer");}
 }
 	  
-function User(form){                            //player bốc bài, called khi ấn 'HIT'
+function User(form){        //player bốc bài, called khi ấn 'HIT'
 if (gameOver ==0)
 {form.say1.value=("Deal the Cards!"); form.say2.value=(""); return;}
 else
 {cardCount+=1; form.say1.value=("You Get...");
 form.you.value = eval(form.you.value) + PickACard("You");}
+document.getElementById("check").innerHTML= cardCount
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADD	
 if(form.you.value==21 && cardCount==2)						//ADD :thêm 
 {form.say1.value=("Blackjack! You win!");					//có blackjack
@@ -154,7 +155,8 @@ window.onload = setBj;
 </tbody>
 </table>
 </form>
-	
+<p> so bai</p>
+<p id="check"><p>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 <div id="userDIV">
 	Player 's cards
