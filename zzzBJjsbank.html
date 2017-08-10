@@ -52,9 +52,10 @@ function PickACard(strWho){
 card = Shuffle(12); //tại sao 12?????????????????????????????????????????????????????
 suit = getSuit();
 if(strWho =="You")
-document.display.say2.value=(cardName(card) + " of " + suit);                   //say2 là bài của người chơi
+{document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
 else
-document.display.say1.value=(cardName(card) + " of " + suit);			//say1 là bài của máy (dealer)
+document.display.say1.value=(cardName(card) + " of " + suit); //say1 là bài của máy (dealer)
 return cardValue(card,strWho);
 }
 	  
