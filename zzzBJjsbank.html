@@ -13,7 +13,7 @@
 }	
 </style>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack</title>
+  <title>Blackjack;;</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
@@ -54,7 +54,60 @@ suit = getSuit();
 if(strWho =="You")
 {document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi
 //   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ var x = document.createElement("IMG");
+if (card==1 && suit==1){
+	x.setAttribute("src", "ace_of_spades.png");};
+if (card==1 && suit==2){
+	x.setAttribute("src", "ace_of_clubs.png");};
+if (card==1 && suit==3){
+	x.setAttribute("src", "ace_of_diamonds.png");};
+if (card==1 && suit==4){
+	x.setAttribute("src", "ace_of_hearts.png");};
+if (card==2 && suit==1){
+	x.setAttribute("src", "2_of_spades.png");};
+if (card==2 && suit==2){
+	x.setAttribute("src", "2_of_clubs.png");};
+if (card==2 && suit==3){
+	x.setAttribute("src", "2_of_diamonds.png");};
+if (card==2 && suit==4){
+	x.setAttribute("src", "2_of_hearts.png");};
+if (card==3 && suit==1){
+	x.setAttribute("src", "3_of_spades.png");};
+if (card==3 && suit==2){
+	x.setAttribute("src", "3_of_clubs.png");};
+if (card==3 && suit==3){
+	x.setAttribute("src", "3_of_diamonds.png");};
+if (card==3 && suit==4){
+	x.setAttribute("src", "3_of_hearts.png");};
+if (card==4 && suit==1){
+	x.setAttribute("src", "4_of_spades.png");};
+if (card==4 && suit==2){
+	x.setAttribute("src", "4_of_clubs.png");};
+if (card==4 && suit==3){
+	x.setAttribute("src", "4_of_diamonds.png");};
+if (card==4 && suit==4){
+	x.setAttribute("src", "4_of_hearts.png");};
+if (card==5 && suit==1){
+	x.setAttribute("src", "5_of_spades.png");};
+if (card==5 && suit==2){
+	x.setAttribute("src", "5_of_clubs.png");};
+if (card==5 && suit==3){
+	x.setAttribute("src", "5_of_diamonds.png");};
+if (card==5 && suit==4){
+	x.setAttribute("src", "5_of_hearts.png");};
+if (card==6 && suit==1){
+	x.setAttribute("src", "6_of_spades.png");}	;
+if (card==6 && suit==2){
+	x.setAttribute("src", "6_of_clubs.png");}	;
+if (card==6 && suit==3){
+	x.setAttribute("src", "6_of_diamonds.png");}	;
+if (card==6 && suit==4){
+	x.setAttribute("src", "6_of_hearts.png");}	;
+if (card==7 && suit==1){
+	x.setAttribute("src", "7_of_spades.png");}	;
  
+ 
+document.getElementById("userDIV").appendChild(x);
  
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 }
