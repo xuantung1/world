@@ -13,7 +13,7 @@
 }	
 </style>-->	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack2</title>
+  <title>Blackjack</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
@@ -51,7 +51,7 @@ return card;
 	  
 function PickACard(strWho){
 card = Shuffle(12); //tại sao 12?????????????????????????????????????????????????????	
-card2=caedName(card);
+card2=cardName(card);
 suit = getSuit();
 if(strWho =="You")
 {document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi
