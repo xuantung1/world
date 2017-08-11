@@ -55,10 +55,10 @@ card2=cardName(card);
 suit = getSuit();
 if(strWho =="You")
 {document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi
-//   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  //var x = document.createElement("IMG");
  
-if (card2=="Ace" && suit=="Spades"){
+if (card2=="Ace" && suit=="Spades"){                                       //thêm phần hiện hình quân bài
 	document.getElementById("userDIV").src="ace_of_spades.png";};
 if (card2=="Ace" && suit=="Clubs"){
 	document.getElementById("userDIV").src= "ace_of_clubs.png";};
@@ -159,7 +159,7 @@ if (card2=="King" && suit=="Diamonds"){
  
 //document.getElementById("userDIV").appendChild(x);
  
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 }
 else
 document.display.say1.value=(cardName(card) + " of " + suit); //say1 là bài của máy (dealer)
