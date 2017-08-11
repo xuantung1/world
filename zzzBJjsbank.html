@@ -13,10 +13,11 @@
 }	
 </style>-->	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack</title>
+  <title>Blackjack2</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
+var card2;	  
 var gameOver; var cardCount;
 function Shuffle(max){
 var num=Math.random()*max;
@@ -49,20 +50,21 @@ return card;
 }
 	  
 function PickACard(strWho){
-card = Shuffle(12); //tại sao 12?????????????????????????????????????????????????????
+card = Shuffle(12); //tại sao 12?????????????????????????????????????????????????????	
+card2=caedName(card);
 suit = getSuit();
 if(strWho =="You")
 {document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi
 //   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  //var x = document.createElement("IMG");
  
-if (card=="Ace" && suit=="Spades"){
+if (card2=="Ace" && suit=="Spades"){
 	document.getElementById("userDIV").src="ace_of_spades.png";};
-if (card=="Ace" && suit=="Clubs"){
+if (card2=="Ace" && suit=="Clubs"){
 	document.getElementById("userDIV").src= "ace_of_clubs.png";};
-if (card=="Ace" && suit=="Diamonds"){
+if (card2=="Ace" && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "ace_of_diamonds.png";};
-if (card=="Ace" && suit=="Hearts"){
+if (card2=="Ace" && suit=="Hearts"){
 	document.getElementById("userDIV").src= "ace_of_hearts.png";};
 if (card==2 && suit=="Spades"){
 	document.getElementById("userDIV").src= "2_of_spades.png";};
@@ -112,11 +114,11 @@ if (card==9 && suit=="Spades"){
 	document.getElementById("userDIV").src= "9_of_spades.png";}	;
 if (card==10 && suit=="Spades"){
 	document.getElementById("userDIV").src= "10_of_spades.png";}	;
-if (card=="Jack" && suit=="Spades"){
+if (card2=="Jack" && suit=="Spades"){
 	document.getElementById("userDIV").src= "jack_of_spades2.png";}	;
-if (card=="Queen" && suit=="Spades"){
+if (card2=="Queen" && suit=="Spades"){
 	document.getElementById("userDIV").src= "queen_of_spades2.png";}	;
-if (card=="King" && suit=="Spades"){
+if (card2=="King" && suit=="Spades"){
 	document.getElementById("userDIV").src= "king_of_spades2.png";}	;
 if (card==7 && suit=="Clubs"){
 	document.getElementById("userDIV").src= "7_of_clubs.png";}	;
@@ -126,13 +128,13 @@ if (card==9 && suit=="Clubs"){
 	document.getElementById("userDIV").src= "9_of_clubs.png";}	;
 if (card==10 && suit=="Clubs"){
 	document.getElementById("userDIV").src= "10_of_clubs.png";}	;
-if (card=="Jack" && suit=="Clubs"){
+if (card2=="Jack" && suit=="Clubs"){
 	document.getElementById("userDIV").src= "jack_of_clubs2.png";}	;
-if (card=="Queen" && suit=="Clubs"){
+if (card2=="Queen" && suit=="Clubs"){
 	document.getElementById("userDIV").src= "queen_of_clubs2.png";}	;
-if (card=="King" && suit=="Clubs"){
+if (card2=="King" && suit=="Clubs"){
 	document.getElementById("userDIV").src= "king_of_clubs2.png";}	;
-if (card==7 && suit=="Diamonds"){
+if (card2==7 && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "7_of_diamonds.png";}	;
 if (card==8 && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "8_of_diamonds.png";}	;
@@ -140,11 +142,11 @@ if (card==9 && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "9_of_diamonds.png";}	;
 if (card==10 && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "10_of_diamonds.png";}	;
-if (card=="Jack" && suit=="Diamonds"){
+if (card2=="Jack" && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "jack_of_diamonds2.png";}	;
-if (card=="Queen" && suit=="Diamonds"){
+if (card2=="Queen" && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "queen_of_diamonds2.png";}	;
-if (card=="King" && suit=="Diamonds"){
+if (card2=="King" && suit=="Diamonds"){
 	document.getElementById("userDIV").src= "king_of_diamonds2.png";}	;
 
 
