@@ -13,7 +13,7 @@
 }	
 </style>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack</title>
+  <title>Blackjack.</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
@@ -51,8 +51,8 @@ return card;
 	  
 function PickACard(strWho){
 card = Shuffle(12); //tại sao 12?????????????????????????????????????????????????????	
-card2=cardName(card);
 suit = getSuit();
+card2=cardName(card);	
 if(strWho =="You")
 {document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi
 //   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -162,18 +162,11 @@ if (card2=="Queen" && suit=="Hearts"){
 	document.getElementById("userCards").src= "queen_of_hearts2.png";}	;
 if (card2=="King" && suit=="Hearts"){
 	document.getElementById("userCards").src= "king_of_hearts2.png";}	;
-
-
-
-
- 
  //x.setAttribute("width", "304");
    // x.setAttribute("height", "228");
     //x.setAttribute("alt", "card");
  
- 
 //document.getElementById("userDIV").appendChild(x);
- 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 }
 else
