@@ -6,6 +6,7 @@
 #userDIV {
     border: 1px solid black;
     margin-bottom: 10px;
+	width: 400px;
 }	
 #dealerDIV {
     border: 1px solid black;
@@ -13,11 +14,14 @@
 }	
 </style>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack.</title>
+  <title>Blackjack</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
-var card2;	  
+var card2;	
+ 
+var counte; var i; var precard=[]; var presuit=[];                   //biến cho việc tránh bị lặp bài
+
 var gameOver; var cardCount;
 function Shuffle(max){
 var num=Math.random()*max;
@@ -40,7 +44,7 @@ if(card == 13) return "King";
 return "" + card;
 }
 	  
-function cardValue(card,strWho){                                                //biến strwho để xác định lượt
+function cardValue(card,strWho){  //biến strwho để xác định lượt
 if(card == 1) {
 	if(strWho =="You" && document.display.you.value >10){
 	document.display.say2.value=document.display.say2.value+" Low"; return 1;}
@@ -52,13 +56,25 @@ return card;
 function PickACard(strWho){
 card = Shuffle(12); //tại sao 12?????????????????????????????????????????????????????	
 suit = getSuit();
-card2=cardName(card);	
+//######################################################################################################thêm phần chống lặp bài
+counte+=1;                                   
+if (counte!=1){
+	for (i=1;i<counte;i++){
+		while (card==precard[i] && suit==presuit[i]){
+			card = Shuffle(12); 	
+			suit = getSuit();
+		}	
+	}
+}
+precard[counte]=card;presuit[counte]=suit;
+//#####################################################################################################
+card2=cardName(card);
 if(strWho =="You")
 {document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi
-//   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  //var x = document.createElement("IMG");
  
-if (card2=="Ace" && suit=="Spades"){                                       //thêm phần hiện hình quân bài
+if (card2=="Ace" && suit=="Spades"){                                       //thêm phần hiện hình quân bài của player
 	document.getElementById("userCards").src="ace_of_spades.png";};
 if (card2=="Ace" && suit=="Clubs"){
 	document.getElementById("userCards").src= "ace_of_clubs.png";};
@@ -112,7 +128,7 @@ if (card==8 && suit=="Spades"){
 	document.getElementById("userCards").src= "8_of_spades.png";}	;
 if (card==9 && suit=="Spades"){
 	document.getElementById("userCards").src= "9_of_spades.png";}	;
-if (card2==10 && suit=="Spades"){
+if (card==10 && suit=="Spades"){
 	document.getElementById("userCards").src= "10_of_spades.png";}	;
 if (card2=="Jack" && suit=="Spades"){
 	document.getElementById("userCards").src= "jack_of_spades2.png";}	;
@@ -126,7 +142,7 @@ if (card==8 && suit=="Clubs"){
 	document.getElementById("userCards").src= "8_of_clubs.png";}	;
 if (card==9 && suit=="Clubs"){
 	document.getElementById("userCards").src= "9_of_clubs.png";}	;
-if (card2==10 && suit=="Clubs"){
+if (card==10 && suit=="Clubs"){
 	document.getElementById("userCards").src= "10_of_clubs.png";}	;
 if (card2=="Jack" && suit=="Clubs"){
 	document.getElementById("userCards").src= "jack_of_clubs2.png";}	;
@@ -140,7 +156,7 @@ if (card==8 && suit=="Diamonds"){
 	document.getElementById("userCards").src= "8_of_diamonds.png";}	;
 if (card==9 && suit=="Diamonds"){
 	document.getElementById("userCards").src= "9_of_diamonds.png";}	;
-if (card2==10 && suit=="Diamonds"){
+if (card==10 && suit=="Diamonds"){
 	document.getElementById("userCards").src= "10_of_diamonds.png";}	;
 if (card2=="Jack" && suit=="Diamonds"){
 	document.getElementById("userCards").src= "jack_of_diamonds2.png";}	;
@@ -162,12 +178,15 @@ if (card2=="Queen" && suit=="Hearts"){
 	document.getElementById("userCards").src= "queen_of_hearts2.png";}	;
 if (card2=="King" && suit=="Hearts"){
 	document.getElementById("userCards").src= "king_of_hearts2.png";}	;
+ 
  //x.setAttribute("width", "304");
    // x.setAttribute("height", "228");
     //x.setAttribute("alt", "card");
  
+ 
 //document.getElementById("userDIV").appendChild(x);
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 }
 else
 document.display.say1.value=(cardName(card) + " of " + suit); //say1 là bài của máy (dealer)
@@ -191,7 +210,7 @@ else
 if(form.you.value<10)
 {form.say1.value=("Not Below Ten!"); form.say2.value=("Take a Hit!"); return;}
 else
-if (cardCount <2)  //cardCount để đếm bài, tối thiểu người chơi phải có 2 quân
+if (cardCount <2)  //cardCount để đếm bài của người chơi, tối thiểu người chơi phải có 2 quân
 {form.say1.value=("Minimum 2 Cards!"); form.say2.value=("Hit Again!"); return;}
 else
 while(form.dealer.value < 17) 		//máy bốc liên tiếp cho đến khi có >17 điểm
@@ -204,11 +223,11 @@ if (gameOver ==0)
 else
 {cardCount+=1; form.say1.value=("You Get...");
 form.you.value = eval(form.you.value) + PickACard("You");}
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADD	
-if(form.you.value==21 && cardCount==2)						//ADD :thêm 
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDDDDDDDDDDDDDDDDDDDDD	
+if(form.you.value==21 && cardCount==2)						//thêm 
 {form.say1.value=("Blackjack! You win!");					//có blackjack
 gameOver=0; form.numgames.value=eval(form.numgames.value)+1;}			//là thắng 
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD	
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDDDDDDDDDDDDDDDDDDDDDDDDDDDDD	D
 if(form.you.value > 21)
 {form.say1.value=("You Busted!");
 gameOver=0; form.numgames.value=eval(form.numgames.value)-1;}
@@ -275,9 +294,10 @@ window.onload = setBj;
 	<p style="font-size:150%;font-family:Comic Sans MS:">Player 's cards</p>
 	<img id="userCards" scr="" style="width:150px;height:200px">
 </div>
-<!--<div id="dealerDIV">
+<div id="dealerDIV">
 	 Dealer
-</div>-->
+	 
+</div>
 	
 
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
