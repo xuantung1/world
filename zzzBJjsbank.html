@@ -15,7 +15,7 @@
 }	
 </style>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack.</title>
+  <title>2TESTBlackjack</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
@@ -74,115 +74,115 @@ if(strWho =="You")
 {document.display.say2.value=(cardName(card) + " of " + suit);  //say2 là bài của người chơi
 //   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
- //var x = document.createElement("IMG");
+ var x = document.createElement("IMG");
 if (card2=="Ace" && suit=="Spades"){                                       //thêm phần hiện hình quân bài của player
-	document.getElementById("userCards").src="ace_of_spades.png";};
+	x.setAttribute("src","ace_of_spades.png");};
 if (card2=="Ace" && suit=="Clubs"){
-	document.getElementById("userCards").src= "ace_of_clubs.png";};
+	x.setAttribute("src", "ace_of_clubs.png");};
 if (card2=="Ace" && suit=="Diamonds"){
-	document.getElementById("userCards").src= "ace_of_diamonds.png";};
+	x.setAttribute("src", "ace_of_diamonds.png");};
 if (card2=="Ace" && suit=="Hearts"){
-	document.getElementById("userCards").src= "ace_of_hearts.png";};
+	x.setAttribute("src", "ace_of_hearts.png");};
 if (card==2 && suit=="Spades"){
-	document.getElementById("userCards").src= "2_of_spades.png";};
+	x.setAttribute("src", "2_of_spades.png");};
 if (card==2 && suit=="Clubs"){
-	document.getElementById("userCards").src= "2_of_clubs.png";};
+	x.setAttribute("src", "2_of_clubs.png");};
 if (card==2 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "2_of_diamonds.png";};
+	x.setAttribute("src", "2_of_diamonds.png");};
 if (card==2 && suit=="Hearts"){
-	document.getElementById("userCards").src= "2_of_hearts.png";};
+	x.setAttribute("src", "2_of_hearts.png");};
 if (card==3 && suit=="Spades"){
-	document.getElementById("userCards").src= "3_of_spades.png";};
+	x.setAttribute("src", "3_of_spades.png");};
 if (card==3 && suit=="Clubs"){
-	document.getElementById("userCards").src= "3_of_clubs.png";};
+	x.setAttribute("src", "3_of_clubs.png");};
 if (card==3 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "3_of_diamonds.png";};
+	x.setAttribute("src", "3_of_diamonds.png");};
 if (card==3 && suit=="Hearts"){
-	document.getElementById("userCards").src="3_of_hearts.png";};
+	x.setAttribute("src","3_of_hearts.png");};
 if (card==4 && suit=="Spades"){
-	document.getElementById("userCards").src= "4_of_spades.png";};
+	x.setAttribute("src", "4_of_spades.png");};
 if (card==4 && suit=="Clubs"){
-	document.getElementById("userCards").src= "4_of_clubs.png";};
+	x.setAttribute("src", "4_of_clubs.png");};
 if (card==4 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "4_of_diamonds.png";};
+	x.setAttribute("src", "4_of_diamonds.png");};
 if (card==4 && suit=="Hearts"){
-	document.getElementById("userCards").src= "4_of_hearts.png";};
+	x.setAttribute("src", "4_of_hearts.png");};
 if (card==5 && suit=="Spades"){
-	document.getElementById("userCards").src= "5_of_spades.png";};
+	x.setAttribute("src", "5_of_spades.png");};
 if (card==5 && suit=="Clubs"){
-	document.getElementById("userCards").src= "5_of_clubs.png";};
+	x.setAttribute("src", "5_of_clubs.png");};
 if (card==5 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "5_of_diamonds.png";};
+	x.setAttribute("src", "5_of_diamonds.png");};
 if (card==5 && suit=="Hearts"){
-	document.getElementById("userCards").src="5_of_hearts.png";};
+	x.setAttribute("src","5_of_hearts.png");};
 if (card==6 && suit=="Spades"){
-	document.getElementById("userCards").src= "6_of_spades.png";}	;
+	x.setAttribute("src", "6_of_spades.png");}	;
 if (card==6 && suit=="Clubs"){
-	document.getElementById("userCards").src= "6_of_clubs.png";}	;
+	x.setAttribute("src", "6_of_clubs.png");}	;
 if (card==6 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "6_of_diamonds.png";}	;
+	x.setAttribute("src", "6_of_diamonds.png");}	;
 if (card==6 && suit=="Hearts"){
-	document.getElementById("userCards").src= "6_of_hearts.png";}	;
+	x.setAttribute("src", "6_of_hearts.png");}	;
 if (card==7 && suit=="Spades"){
-	document.getElementById("userCards").src= "7_of_spades.png";}	;
+	x.setAttribute("src", "7_of_spades.png");}	;
 if (card==8 && suit=="Spades"){
-	document.getElementById("userCards").src= "8_of_spades.png";}	;
+	x.setAttribute("src", "8_of_spades.png");}	;
 if (card==9 && suit=="Spades"){
-	document.getElementById("userCards").src= "9_of_spades.png";}	;
+	x.setAttribute("src", "9_of_spades.png");}	;
 if (card==10 && suit=="Spades"){
-	document.getElementById("userCards").src= "10_of_spades.png";}	;
+	x.setAttribute("src", "10_of_spades.png");}	;
 if (card2=="Jack" && suit=="Spades"){
-	document.getElementById("userCards").src= "jack_of_spades2.png";}	;
+	x.setAttribute("src", "jack_of_spades2.png");}	;
 if (card2=="Queen" && suit=="Spades"){
-	document.getElementById("userCards").src= "queen_of_spades2.png";}	;
+	x.setAttribute("src", "queen_of_spades2.png");}	;
 if (card2=="King" && suit=="Spades"){
-	document.getElementById("userCards").src= "king_of_spades2.png";}	;
+	x.setAttribute("src", "king_of_spades2.png");}	;
 if (card==7 && suit=="Clubs"){
-	document.getElementById("userCards").src= "7_of_clubs.png";}	;
+	x.setAttribute("src", "7_of_clubs.png");}	;
 if (card==8 && suit=="Clubs"){
-	document.getElementById("userCards").src= "8_of_clubs.png";}	;
+	x.setAttribute("src", "8_of_clubs.png");}	;
 if (card==9 && suit=="Clubs"){
-	document.getElementById("userCards").src= "9_of_clubs.png";}	;
+	x.setAttribute("src", "9_of_clubs.png");}	;
 if (card==10 && suit=="Clubs"){
-	document.getElementById("userCards").src= "10_of_clubs.png";}	;
+	x.setAttribute("src", "10_of_clubs.png");}	;
 if (card2=="Jack" && suit=="Clubs"){
-	document.getElementById("userCards").src= "jack_of_clubs2.png";}	;
+	x.setAttribute("src", "jack_of_clubs2.png");}	;
 if (card2=="Queen" && suit=="Clubs"){
-	document.getElementById("userCards").src= "queen_of_clubs2.png";}	;
+	x.setAttribute("src", "queen_of_clubs2.png");}	;
 if (card2=="King" && suit=="Clubs"){
-	document.getElementById("userCards").src= "king_of_clubs2.png";}	;
+	x.setAttribute("src", "king_of_clubs2.png");}	;
 if (card2==7 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "7_of_diamonds.png";}	;
+	x.setAttribute("src", "7_of_diamonds.png");}	;
 if (card==8 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "8_of_diamonds.png";}	;
+	x.setAttribute("src", "8_of_diamonds.png");}	;
 if (card==9 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "9_of_diamonds.png";}	;
+	x.setAttribute("src", "9_of_diamonds.png");}	;
 if (card==10 && suit=="Diamonds"){
-	document.getElementById("userCards").src= "10_of_diamonds.png";}	;
+	x.setAttribute("src", "10_of_diamonds.png");}	;
 if (card2=="Jack" && suit=="Diamonds"){
-	document.getElementById("userCards").src= "jack_of_diamonds2.png";}	;
+	x.setAttribute("src", "jack_of_diamonds2.png");}	;
 if (card2=="Queen" && suit=="Diamonds"){
-	document.getElementById("userCards").src= "queen_of_diamonds2.png";}	;
+	x.setAttribute("src", "queen_of_diamonds2.png");}	;
 if (card2=="King" && suit=="Diamonds"){
-	document.getElementById("userCards").src= "king_of_diamonds2.png";}	;
+	x.setAttribute("src", "king_of_diamonds2.png");}	;
 if (card2==7 && suit=="Hearts"){
-	document.getElementById("userCards").src= "7_of_hearts.png";}	;
+	x.setAttribute("src", "7_of_hearts.png");}	;
 if (card==8 && suit=="Hearts"){
-	document.getElementById("userCards").src= "8_of_hearts.png";}	;
+	x.setAttribute("src", "8_of_hearts.png");}	;
 if (card==9 && suit=="Hearts"){
-	document.getElementById("userCards").src= "9_of_hearts.png";}	;
+	x.setAttribute("src", "9_of_hearts.png");}	;
 if (card2==10 && suit=="Hearts"){
-	document.getElementById("userCards").src= "10_of_hearts.png";}	;
+	x.setAttribute("src", "10_of_hearts.png");}	;
 if (card2=="Jack" && suit=="Hearts"){
-	document.getElementById("userCards").src= "jack_of_hearts2.png";}	;
+	x.setAttribute("src", "jack_of_hearts2.png");}	;
 if (card2=="Queen" && suit=="Hearts"){
-	document.getElementById("userCards").src= "queen_of_hearts2.png";}	;
+	x.setAttribute("src", "queen_of_hearts2.png");}	;
 if (card2=="King" && suit=="Hearts"){
-	document.getElementById("userCards").src= "king_of_hearts2.png";}	;
- //x.setAttribute("width", "304");
-   // x.setAttribute("height", "228");
-    //x.setAttribute("alt", "card");
-//document.getElementById("userDIV").appendChild(x);
+	x.setAttribute("src", "king_of_hearts2.png");}	;
+    x.setAttribute("width", "140");
+    x.setAttribute("height", "190");
+    x.setAttribute("alt", "card");
+document.getElementById("userDIV").appendChild(x);
  
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 }
@@ -192,6 +192,13 @@ return cardValue(card,strWho);
 }
 	  
 function NewHand(form){  //bắt đầu ván mới, called khi ấn DEAL
+counte=0;
+//**********************************************************************************************
+var divUser = document.getElementById('userDIV');                          //thêm phần xóa các quân bài trước của người chơi để bắt đầu ván mới
+while(divUser.firstChild){
+    divUser.removeChild(divUser.firstChild);
+}
+//**********************************************************************************************
 if(gameOver !=0) //gameOver là biến kiểu boolean, xem đã hết game chưa ??? bằng 0 là hết game rồi ???
 {form.say1.value=("Hand in Play!"); form.say2.value=(""); return;} 
 else
@@ -403,7 +410,7 @@ window.onload = setBj;
 	<p style="font-size:130%;font-family:Comic Sans MS:">Player 's card</p>
 	<!--<img id="" scr="Luser" style="width:140px;height:190px" align="left">
 	<img id="" scr="Ruser" style="width:140px;height:190px" align="right">-->
-	<img id="userCards" scr="" style="width:140px;height:190px">
+	<!--<img id="userCards" scr="" style="width:140px;height:190px">-->
 </div>
 <div id="dealerDIV" align= "center">
 	 <p style="font-size:130%;font-family:Comic Sans MS:">Dealer 's first card</p>
