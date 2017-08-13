@@ -2,7 +2,11 @@
 <html>
 <head>
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
-<style>	
+<style>
+#resultDIV{
+	border: 1px solid black;
+    margin-bottom: 10px;	
+}	
 #userDIV {
     border: 1px solid black;
     margin-bottom: 10px;	
@@ -16,7 +20,7 @@ body{
 }
 </style>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack-online</title>
+  <title>Blackjack</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
@@ -179,8 +183,8 @@ if (card2=="Queen" && suit=="Hearts"){
 if (card2=="King" && suit=="Hearts"){
 	x.setAttribute("src", "king_of_hearts2.png");}	;
 	
-x.setAttribute("width", "140");
-x.setAttribute("height", "190");
+x.setAttribute("width", "120");
+x.setAttribute("height", "170");
 x.setAttribute("alt", "card");	
 document.getElementById("userDIV").appendChild(x);
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -293,8 +297,8 @@ if (card2=="Queen" && suit=="Hearts"){
 if (card2=="King" && suit=="Hearts"){
 	x.setAttribute("src", "king_of_hearts2.png");}	;
 	
-x.setAttribute("width", "140");
-x.setAttribute("height", "190");
+x.setAttribute("width", "120");
+x.setAttribute("height", "170");
 x.setAttribute("alt", "card");	
 document.getElementById("dealerDIV").appendChild(x);} //say1 là bài của máy (dealer)
 return cardValue(card,strWho);
@@ -302,6 +306,7 @@ return cardValue(card,strWho);
 	  
 function NewHand(form){  //bắt đầu ván mới, called khi ấn DEAL
 counte=0;
+document.getElementById("pic").src="playing.jpg";
 //**********************************************************************************************
 var divUser = document.getElementById('userDIV');                          //thêm phần xóa các quân bài trước của Player để bắt đầu ván mới
 while(divUser.firstChild){
@@ -342,11 +347,13 @@ form.you.value = eval(form.you.value) + PickACard("You");}
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD	
 if(form.you.value==21 && cardCount==2)						//thêm: có blackjack là thắng 
 {form.say1.value=("Blackjack! You win!");					
-gameOver=0; form.numgames.value=eval(form.numgames.value)+1;}	
+gameOver=0; form.numgames.value=eval(form.numgames.value)+1;
+document.getElementById("pic").src="Pwinner.jpg"}	
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 if(form.you.value > 21)
 {form.say1.value=("You Busted!");
-gameOver=0; form.numgames.value=eval(form.numgames.value)-1;}
+gameOver=0; form.numgames.value=eval(form.numgames.value)-1;
+document.getElementById("pic").src="Plose.jpg"}
 }
 	  
 function LookAtHands(form){
@@ -354,18 +361,22 @@ if (gameOver ==0 || form.you.value<10 || cardCount <2){return;}
 else
 if(form.dealer.value > 21) 
 {form.say1.value=("House Busts!"); form.say2.value=("You Win! $$$$$$");
-gameOver=0; form.numgames.value=eval(form.numgames.value)+1;}
+gameOver=0; form.numgames.value=eval(form.numgames.value)+1;
+document.getElementById("pic").src="Pwinner.jpg";}
  else
 if(form.you.value > form.dealer.value)
 {form.say1.value=("You Win!"); form.say2.value=("$$$$$$$$$$$$$$$");
-gameOver=0; form.numgames.value=eval(form.numgames.value)+1;}
+gameOver=0; form.numgames.value=eval(form.numgames.value)+1;
+document.getElementById("pic").src="Pwinner.jpg";}
  else
  if(form.dealer.value == form.you.value)
 {form.say1.value=("Game Tied!"); form.say2.value=("Try Again!");
-gameOver=0; form.numgames.value=eval(form.numgames.value)-1;}
+gameOver=0; form.numgames.value=eval(form.numgames.value)-1;
+document.getElementById("pic").src="Plose.jpg";}
  else {
 form.say1.value=("House Wins!"); form.say2.value=("Tough Luck!");
-gameOver=0; form.numgames.value=eval(form.numgames.value)-1;}
+gameOver=0; form.numgames.value=eval(form.numgames.value)-1;
+document.getElementById("pic").src="Plose.jpg";}
 }
 	  
 function setBj(){
@@ -385,7 +396,7 @@ window.onload = setBj;
 <body>
 <a href="https://www.javascriptbank.com/blackjack.html">Original version</a>
 <form name="display">
-<table bgcolor="#c0c0c0" border="1" cellspacing="0" cellpadding="3" align="center" style="width:600px;height:115px"> <!--thêm align="center-->
+<table bgcolor="#c0c0c0" border="1" cellspacing="0" cellpadding="3" align="center" <!--style="width:600px;height:115px"-->> <!--thêm align="center-->
 <tbody><tr>
 <td><center>Score:</center></td>
 <td><center>Dealer</center></td>
@@ -413,6 +424,10 @@ window.onload = setBj;
 <div id="userDIV" align= "center">
 	<p style="font-size:250%;font-family:Monotype Corsiva;color:BlanchedAlmond;">Your cards</p>
 </div>	
+<div id="resultDIV" align="center">
+	<p id="result" style="font-size:250%;font-family:Monotype Corsiva;color:BlanchedAlmond;"></p>
+	<img id="pic" src="playing.jpg" style="width:150px;height:150px;">
+</div>
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 </body>
 </html>
