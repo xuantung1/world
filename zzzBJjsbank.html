@@ -16,14 +16,13 @@ body{
 }
 </style>	
 <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->	
-  <title>Blackjack-Online</title>
+  <title>Blackjack-online</title>
   <script language="JavaScript">
 // Mike McGrath (mike_mcgrath@lineone.net)
 <!-- Begin
 var card2;	
  
 var counte; var i; var precard=[]; var presuit=[];                   //thêm biến cho việc tránh bị lặp bài
-
 var gameOver; var cardCount;
 function Shuffle(max){
 var num=Math.random()*max;
@@ -334,7 +333,6 @@ else
 while(form.dealer.value < 17){ //máy bốc liên tiếp cho đến khi có >17 điểm
 form.dealer.value = eval(form.dealer.value) + PickACard("Dealer");}
 }
-
 function User(form){   //player bốc bài, called khi ấn 'HIT'
 if (gameOver ==0)
 {form.say1.value=("Deal the Cards!"); form.say2.value=(""); return;}
